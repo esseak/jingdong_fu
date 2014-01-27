@@ -37,7 +37,7 @@ module JingdongFu
     end
 
     def get(options = {})
-      @response = TaobaoFu::Rest.get(@base_url, generate_query_vars(sorted_params(options)))
+      @response = JingdongFu::Rest.get(@base_url, generate_query_vars(sorted_params(options)))
       parse_result @response
     end
 
