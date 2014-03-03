@@ -24,7 +24,8 @@ module JingdongFu
   class << self
     def load(config_file)
       @settings = YAML.load_file(config_file)
-      @settings = @settings[Rails.env] if defined? Rails.env
+      env = 'production'
+      env = Rails.env if defined? Rails.env
       apply_settings
     end
 
